@@ -1,0 +1,15 @@
+<h1>Create a new Restaurant</h1>
+
+<%= simple_form_for @restaurant do |f|%>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.submit "Add a restaurant", class: "btn btn-danger" %>
+<% end %>
+<br>
+<br>
+
+<%= link_to restaurants_path do %>
+  <i class="fas fa-undo-alt"></i>
+<% end %>

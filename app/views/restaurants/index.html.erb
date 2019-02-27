@@ -1,0 +1,18 @@
+<h1>Restaurants</h1>
+
+<ul class="list-group list-group-flush">
+  <% @restaurants.each do |restaurant| %>
+  <div class="restaurant-list">
+    <%= link_to restaurant_path(restaurant) do %>
+      <li class="list-group-item">
+        <strong><%= restaurant.name %></strong><br>
+        <%= restaurant.category %>, <%= restaurant.phone_number %>
+      </li>
+    <% end %>
+  </div>
+  <% end %>
+</ul>
+
+
+<%= link_to "+ Add a restaurant", new_restaurant_path, class:"btn btn-danger" %>
+

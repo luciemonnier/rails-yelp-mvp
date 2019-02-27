@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h1><%= @restaurant.name %></h1>
+  <h4><%= @restaurant.address %></h4>
+  <p><%= @restaurant.phone_number %></p>
+
+  <%= link_to "+ Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-danger" %>
+  <br>
+  <br>
+  <ul class="list-group">
+    <% @reviews.each do |review| %>
+      <li class="list-group-item">
+        <%= review.content %>   <strong><%= review.rating %> / 5 </strong>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to restaurants_path do %>
+  <i class="fas fa-undo-alt"></i>
+<% end %>
+
